@@ -10,21 +10,30 @@
       height: 360px;
       width: 100p%;
       object-fit:cover;
+      margin-bottom:16px
     }
   </style>
 </head>
 <body>
   {% include 'nav.html' %}
+   <img class="img-fluid" id="banner" src="https://joviancareerwebsite.vishwasumapati.repl.co/static/bg.jpg"
+    width="1520" height="300" alt="html dog">
   <div class="container">
   <h1 class="text-center mt-3 mb-3"> {{company_name}} Careers</h1>
-  <img class="img-fluid" id="banner" src="https://joviancareerwebsite.vishwasumapati.repl.co/static/bg.jpg"
-    width="1520" height="300" alt="html dog">
-  <h2 class="text-center  mt-3 mb-3">About Jovian</h2>
+
+<div class="row" style="margin-bottom:16px">
+  <div class="col-6">
   <p class="lead">Welcome to our job career website! We are excited that you are interested in joining our team.
 
 At our company, we believe that our employees are our greatest asset. We are committed to creating a positive work environment that fosters growth, innovation, and collaboration. We are dedicated to providing our employees with the tools and resources they need to succeed in their careers and achieve their goals.
 
 We offer a wide range of career opportunities across multiple departments, including marketing, finance, human resources, operations, and more. Our team is diverse, and we welcome applicants from all backgrounds and levels of experience.</p>
+  </div>
+  <div class="col-6">
+    <img src="/static/picture.jpg" style="height:320px;border-radius:4px;">
+    </div>
+  </div>
+  
   <h2 class="text-center  mt-3 mb-3">Open Positions</h2>
   <div>
     {% for job in jobs%}
@@ -32,9 +41,10 @@ We offer a wide range of career opportunities across multiple departments, inclu
     {% endfor %}
   </div>
     <div class="text-center">
-  <button class="btn btn-primary btn-lg mb-3">Contact Us</button>
+  <a class="btn btn-primary btn-lg mb-3" href="mailto:vishwasumapati@gmail.com?subject=Questions%20about%20job%20openings&body=My%20Name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20Question%3A%20%3C%20your%20question%20here%3E">Contact Us</a>
     </div>
   </div>
+  {% include 'footer.html' %}
 </body>
   
 </html>
