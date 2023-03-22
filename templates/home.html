@@ -2,52 +2,36 @@
 <html>
 <head>
   <title>Jovian Careers</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <style>
-    h1{
-      font-size:40px;
-      font-family:Roboto;
-      font-weight:medium;
-      color:rgb(102, 153, 153);
-      font-style:fantasy;
-      text-align:center;
-    }
     #banner{
-      width: 100%;
-      height:300px;
+      height: 360px;
+      width: 100p%;
       object-fit:cover;
     }
-    h2 {
-      font-family:Roboto;
-      font: size 32px;
-      color: rgb(100, 100, 100);
-     text-align: center;
-    }
-    p {
-      font-family:Roboto;
-      color:rgb(80,80,80);
-    }
-    #container {
-      max-width:720px;
-      margin: 0 auto 0 auto;
-    }
   </style>
-  
 </head>
 <body>
-  <div id="container">
-  <h1> Jovian Careers</h1>
-  <img id="banner" src="https://joviancareerwebsite.vishwasumapati.repl.co/static/bg.jpg"
+  <div class="container">
+  <h1 class="text-center mt-3 mb-3"> {{company_name}} Careers</h1>
+  <img class="img-fluid" id="banner" src="https://joviancareerwebsite.vishwasumapati.repl.co/static/bg.jpg"
     width="1520" height="300" alt="html dog">
-  <h2>About Jovian</h2>
-  <p>Welcome to our job career website! We are excited that you are interested in joining our team.
+  <h2 class="text-center  mt-3 mb-3">About Jovian</h2>
+  <p class="lead">Welcome to our job career website! We are excited that you are interested in joining our team.
 
 At our company, we believe that our employees are our greatest asset. We are committed to creating a positive work environment that fosters growth, innovation, and collaboration. We are dedicated to providing our employees with the tools and resources they need to succeed in their careers and achieve their goals.
 
 We offer a wide range of career opportunities across multiple departments, including marketing, finance, human resources, operations, and more. Our team is diverse, and we welcome applicants from all backgrounds and levels of experience.</p>
-  <h2>Open Positions</h2>
-  <p>TODO - Show th jobs here</p>
-    <div style="text-align:center;">
-  <button>Contact Us</button>
+  <h2 class="text-center  mt-3 mb-3">Open Positions</h2>
+  <div>
+    {% for job in jobs%}
+       {% include 'jobitem.html' %}
+    {% endfor %}
+  </div>
+    <div class="text-center">
+  <button class="btn btn-primary btn-lg mb-3">Contact Us</button>
     </div>
   </div>
 </body>
